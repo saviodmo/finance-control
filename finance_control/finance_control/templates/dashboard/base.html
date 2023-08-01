@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {# esse comando ajusta a tela para zoom = 100% no responsivo/mobile. Faça o teste sem ele pra entender #}
+    <link href="{{ STATIC_URL }}dashboard/plugins/mdb/css/mdb.min.css" rel="stylesheet" />
+    <link href="{{ STATIC_URL }}dashboard/plugins/sb/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="{{ STATIC_URL }}dashboard/plugins/sb/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <title>Finance Control</title>
+</head>
+<body id="wrapper">
+
+{% block content %}{% endblock content %}
+
+
+    <script type="text/javascript" src="{{ STATIC_URL }}dashboard/plugins/mdb/js/mdb.min.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/js/demo/chart-area-demo.js"></script>
+    <script src="{{ STATIC_URL }}dashboard/plugins/sb/js/demo/chart-pie-demo.js"></script>
+</body>
+
+</html>
