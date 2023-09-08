@@ -1,0 +1,19 @@
+.rounded-balanco-left {
+    border-top-left-radius: 0.35rem!important;
+    border-bottom-left-radius: 0.35rem!important;
+    border-top-right-radius: 0rem!important;
+    border-bottom-right-radius: 0rem!important;
+}
+
+.rounded-balanco-right {
+    border-top-left-radius: 0rem!important;
+    border-bottom-left-radius: 0rem!important;
+    border-top-right-radius: 0.35rem!important;
+    border-bottom-right-radius: 0.35rem!important;
+}
+
+.table-wrapper {
+    max-height: 127px;
+    overflow: auto;
+    display: inline-block;
+}
