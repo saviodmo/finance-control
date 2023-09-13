@@ -17,11 +17,15 @@ class Category(models.Model):
 class Person(models.Model):
     dtt_record = models.DateTimeField("Data de Inserção", auto_now_add=True, blank=True)
     person = models.CharField("Pessoa", max_length=50)
+    slug = models.SlugField('Slug', max_length=255, blank=True, null=True, unique=True)
 
     objects = models.Manager()
 
     def __str__(self):
         return self.person
+
+    def get_absolute_url(self):
+        return reverse('dashboard:pessoa', args=[self.slug])
 
 
 class Bank(models.Model):
@@ -98,3 +102,8 @@ class PersonBank(models.Model):
     person_associated = models.ForeignKey(Person, related_name='person_banks', on_delete=models.PROTECT)
 
     objects = models.Manager()
+
+
+from libs.signals import slug_pre_save
+signals.pre_save.connect(slug_pre_save, sender=Person)
+

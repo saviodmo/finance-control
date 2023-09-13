@@ -66,7 +66,8 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 {{ person_bank_s.bank_associated }}
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_s.person_associated }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_s.person_associated }}
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -88,7 +89,8 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 {{ person_bank_t.bank_associated }}
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_t.person_associated }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_t.person_associated }}
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -175,13 +177,24 @@
                     <h6 class="m-0 font-weight-bold text-dark">Balanço</h6>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex justify-content-evenly mb-4">
+                    <div class="justify-content-evenly mb-4">
                         <div class="row">
-                            <div class="col mr-2">
+                            <div class="col text-end">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Entradas</div>
                             </div>
-                            <div class="col-auto">
+                            <div class="col text-start">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Saidas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-content-evenly">
+                        <div class="row">
+                            <div class="col text-end">
+                                <div class="fs-6 h5 mb-0 text-gray-500">R$ 1000.00</div>
+                            </div>
+                            <div class="vr p-0" style="height: 100%;"></div>
+                            <div class="col text-start">
+                                <div class="fs-6 h5 mb-0 text-gray-500">-R$ 50.00</div>
                             </div>
                         </div>
                     </div>
@@ -194,7 +207,7 @@
                             </div>
                         </div>
                         <div class="col pl-0">
-                            <div class="progress progress mr-2 ml-0 rounded-balanco-right">
+                            <div class="progress progress ml-0 rounded-balanco-right">
                                 <div class="progress-bar bg-danger" role="progressbar"
                                      style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                                      aria-valuemax="100"></div>
