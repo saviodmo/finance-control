@@ -16,7 +16,7 @@ def index(request):
         .annotate(
             total_value=Sum(
                 Case(
-                    When(type='saida', then=F('value') * Value(-1)),
+                    When(type='saida', then=F('val_transaction') * Value(-1)),
                     default='value',
                     output_field=DecimalField()
                 )

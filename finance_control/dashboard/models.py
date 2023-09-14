@@ -64,7 +64,7 @@ class TransactionLog(models.Model):
     dt_transaction = models.DateField("Data da Transação")
     description = models.CharField("Descrição", max_length=200)
     expense_category = models.ForeignKey(Category, related_name='transactions', on_delete=models.PROTECT)
-    value = models.DecimalField("Valor", max_digits=10, decimal_places=2)
+    val_transaction = models.DecimalField("Valor", max_digits=10, decimal_places=2)
     transaction_bank = models.ForeignKey(Bank, related_name='transactions', on_delete=models.PROTECT)
 
     TRANSACTION_TYPE_CHOICES = (
@@ -83,11 +83,11 @@ class TransactionLog(models.Model):
     def val_calculate(self):
         entrada = 0
         if self.type == 'entrada':
-            entrada = sum(self.value)
+            entrada = sum(self.val_transaction)
 
         saida = 0
         if self.type == 'saida':
-            saida = sum(self.value)
+            saida = sum(self.val_transaction)
 
         return entrada - saida
 

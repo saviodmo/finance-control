@@ -25,7 +25,7 @@ class CreditCardAdmin(admin.ModelAdmin):
 
 @admin.register(TransactionLog)
 class TransactionLogAdmin(admin.ModelAdmin):
-    list_display = ['dt_transaction', 'description', 'expense_category', 'value', 'transaction_bank', 'type',
+    list_display = ['dt_transaction', 'description', 'expense_category', 'val_transaction', 'transaction_bank', 'type',
                     'transaction_person', 'observation', 'credit_card']
 
 
