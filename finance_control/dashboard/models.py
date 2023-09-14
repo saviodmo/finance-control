@@ -27,6 +27,9 @@ class Person(models.Model):
     def get_absolute_url(self):
         return reverse('dashboard:pessoa', args=[self.slug])
 
+    def all_banks(self):
+        return self.person_banks.all()
+
 
 class Bank(models.Model):
     dtt_record = models.DateTimeField("Data de Inserção", auto_now_add=True, blank=True)
@@ -36,6 +39,9 @@ class Bank(models.Model):
 
     def __str__(self):
         return self.bank
+
+    def all_transaction(self):
+        return self.transactions.all()
 
 
 class CreditCard(models.Model):
@@ -73,6 +79,17 @@ class TransactionLog(models.Model):
                                     null=True, blank=True, default=None)
 
     objects = models.Manager()
+
+    def val_calculate(self):
+        entrada = 0
+        if self.type == 'entrada':
+            entrada = sum(self.value)
+
+        saida = 0
+        if self.type == 'saida':
+            saida = sum(self.value)
+
+        return entrada - saida
 
 
 class FixedExpenses(models.Model):

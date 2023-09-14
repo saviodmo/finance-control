@@ -56,51 +56,34 @@
         </div>
     </div>
 
+    {% if person_banks %}
     <div class="row">
-        {% for person_bank_s in person_banks_s %}
-        <div class="col-md mb-4">
-            <div class="card border-left-dark shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                {{ person_bank_s.bank_associated }}
+        {% for obj in person_banks %}
+            <h6 class="font-weight-hold">{{ obj.person }}</h6><br>
+            {% with obj.all_banks as in_person %}
+                {% for item in in_person %}
+                <div class="col-md mb-4">
+                    <div class="card border-left-dark shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ item.person_associated }}
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_s.person_associated }}
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                {% endfor %}
+            {% endwith %}
         {% endfor %}
     </div>
-
-    <div class="row">
-        {% for person_bank_t in person_banks_t %}
-        <div class="col-md mb-4">
-            <div class="card border-left-dark shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                {{ person_bank_t.bank_associated }}
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ person_bank_t.person_associated }}
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    {% endif %}
 
     <div class="row">
         <div class="col-4">

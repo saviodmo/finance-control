@@ -27,15 +27,8 @@ def index(request):
 
     transactions = TransactionLog.objects.all()
 
-    savio = Person.objects.get(person="Sávio")
-    tay = Person.objects.get(person="Tay")
-
-    person_banks_s = PersonBank.objects.filter(person_associated=savio)
-    person_banks_t = PersonBank.objects.filter(person_associated=tay)
-
     context['total_sum'] = total_sum['total']
     context['transactions'] = transactions
-    context['person_banks_s'] = person_banks_s
-    context['person_banks_t'] = person_banks_t
+    context['person_banks'] = Person.objects.all()
 
     return render(request, template_name, context)
